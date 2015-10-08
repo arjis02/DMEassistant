@@ -95,6 +95,9 @@ ActiveRecord::Schema.define(version: 20151008012511) do
     t.string   "zipcode",        limit: 64
     t.string   "phone_number",   limit: 128
     t.string   "notes"
+    t.string   "height",         limit: 128, null: false
+    t.string   "weight",         limit: 128, null: false
+    t.datetime "discharge_date"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
@@ -115,7 +118,7 @@ ActiveRecord::Schema.define(version: 20151008012511) do
     t.string   "first_name",       limit: 128, null: false
     t.string   "last_name",        limit: 128, null: false
     t.string   "email",            limit: 128, null: false
-    t.string   "type",             limit: 128
+    t.string   "specialty",        limit: 128
     t.string   "license_number",   limit: 256
     t.string   "registered_state", limit: 64
     t.string   "phone_number",     limit: 128
@@ -128,7 +131,7 @@ ActiveRecord::Schema.define(version: 20151008012511) do
     t.string   "HCPCS_code"
     t.boolean  "leg_rests",                 default: false
     t.string   "serial_number", limit: 512
-    t.integer  "DME_id"
+    t.integer  "dme_id"
     t.boolean  "active"
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
