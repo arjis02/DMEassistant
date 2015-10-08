@@ -13,9 +13,23 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-  resources :therapists
-  resources :physicians
-  resources :dmes
+  resources :therapists do
+    collection do
+      get 'dashboard'
+    end
+  end
+
+  resources :physicians do
+    collection do
+      get 'dashboard'
+    end
+  end
+
+  resources :dmes do
+    collection do
+      get 'dashboard'
+    end
+  end
 
   post '/sessions' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
