@@ -12,7 +12,6 @@ class Orders < ActiveRecord::Migration
   		t.datetime   :date_filled
 
   		t.timestamps null: false
-  		end
   	end
   end
 end

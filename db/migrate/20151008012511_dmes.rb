@@ -1,4 +1,4 @@
-class DmEs < ActiveRecord::Migration
+class Dmes < ActiveRecord::Migration
   def change
   	create_table :dmes do |t|
   		t.string :name, null: false, limit: 256

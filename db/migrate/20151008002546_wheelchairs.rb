@@ -5,7 +5,7 @@ class Wheelchairs < ActiveRecord::Migration
   		t.string     :HCPCS_code
   		t.boolean    :leg_rests, default: false
   		t.string     :serial_number, limit: 512
-  		t.references :DME
+  		t.references :dme
   		t.boolean    :active
   		
   		t.timestamps null: false
