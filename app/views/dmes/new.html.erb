@@ -1,0 +1,15 @@
+<%= form_for :dmes, url: dmes_path do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %></br>
+	<%= f.label :street_address %>
+	<%= f.text_field :street_address %></br>
+	<%= f.label :city %>
+	<%= f.text_field :city %></br>
+	<%= f.label :state %>
+	<%= f.text_field :state %></br>
+	<%= f.label :zipcode %>
+	<%= f.text_field :zipcode %></br>
+	<%= f.label :insurances %>
+	<%= f.text_area :insurances %></br>
+	<%= f.submit "Submit", class: 'button' %>
+<% end %>

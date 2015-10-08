@@ -11,7 +11,7 @@ class TherapistsController < ApplicationController
 			redirect_to login_path
 		else
 			flash[:error] = therapist.errors.full_messages
-			redirect_to therapist_signup_path
+			redirect_to new_therapist_path
 		end
 	end
 

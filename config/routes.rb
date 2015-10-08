@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   #   resources :products
   resources :therapists
   resources :physicians
+  resources :dmes
+
+  post '/sessions' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
   # Example resource route with options:
   #   resources :products do
   #     member do

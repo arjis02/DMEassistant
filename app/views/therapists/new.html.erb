@@ -1,0 +1,15 @@
+<%= form_for :therapists, url: therapists_path do |f| %>
+	<%= f.label      :first_name %>
+	<%= f.text_field :first_name %></br>
+	<%= f.label      :last_name %>
+	<%= f.text_field :last_name %></br>
+	<%= f.label      :email %>
+	<%= f.text_field :email %></br>
+	<%= f.label      :type %>
+	<%= f.text_field :type %></br>
+	<%= f.label      :registered_state %>
+	<%= f.text_field :registered_state %></br>
+	<%= f.label      :license_number %>
+	<%= f.text_field :license_number %></br>
+	<%= f.submit 'Submit', class: 'button' %>     
+<% end %>
