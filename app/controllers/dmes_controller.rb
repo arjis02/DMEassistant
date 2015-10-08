@@ -18,6 +18,6 @@ class DmesController < ApplicationController
 	private
 
 	def dme_params
-		params.require(:dme).permit(:name, :street_address, :city, :state, :zipcode, :insurances)
+		params.require(:dme).permit(:name, :street_address, :city, :state, :zipcode, :insurances, :password)
 	end
 end
