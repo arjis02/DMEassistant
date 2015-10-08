@@ -4,7 +4,7 @@ class Therapists < ActiveRecord::Migration
   		t.string :first_name, null: false, limit: 128
   		t.string :last_name, null: false, limit: 128
   		t.string :email, null: false, limit: 128
-  		t.string :type, limit: 128
+  		t.string :specialty, limit: 128
   		t.string :license_number, limit: 256
   		t.string :registered_state, limit: 64
   		t.string :phone_number, limit: 128
