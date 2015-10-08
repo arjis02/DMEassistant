@@ -8,6 +8,7 @@ class Physicians < ActiveRecord::Migration
   		t.string :license_number, limit: 256
   		t.string :registered_state, limit: 64
   		t.string :phone_number, limit: 128
+      t.string :password_digest, null: false
 
   		t.timestamps null: false
   	end

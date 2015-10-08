@@ -7,6 +7,7 @@ class Dmes < ActiveRecord::Migration
   		t.string :state, limit: 8
   		t.string :zipcode, limit: 64
   		t.string :insurances
+      t.string :password_digest, null: false
 
   		t.timestamps null: false
   	end
