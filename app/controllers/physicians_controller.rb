@@ -11,7 +11,7 @@ class PhysiciansController < ApplicationController
 			redirect_to login_path
 		else
 			flash[:error] = physician.errors.full_messages
-			redirect_to physician_signup_path
+			redirect_to new_physician_path
 		end
 	end
 
