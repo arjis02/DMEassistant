@@ -1,4 +1,6 @@
 class Physician < ActiveRecord::Base
+	has_secure_password
+
 	has_many :orders
 	has_many :employments
 	has_many :medicalrelations
