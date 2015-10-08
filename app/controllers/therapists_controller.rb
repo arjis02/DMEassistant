@@ -8,7 +8,7 @@ class TherapistsController < ApplicationController
 		therapist = Therapist.new(therapist_params)
 
 		if therapist.save
-			redirect_to login_path
+			redirect_to '/'
 		else
 			flash[:error] = therapist.errors.full_messages
 			redirect_to new_therapist_path
@@ -18,6 +18,6 @@ class TherapistsController < ApplicationController
 	private
 
 	def therapist_params
-		params.require(:therapist).permit(:first_name, :last_name, :email, :type, :registered_state, :phone_number, :license_number)
+		params.require(:therapist).permit(:first_name, :last_name, :email, :specialty, :registered_state, :phone_number, :license_number)
 	end
 end

@@ -1,4 +1,4 @@
-<%= form_for :physicians, url: physicians_path do |f| %>
+<%= form_for :physician, url: physicians_path do |f| %>
 	<%= f.label      :first_name %>
 	<%= f.text_field :first_name %></br>
 	<%= f.label      :last_name %>
@@ -11,5 +11,7 @@
 	<%= f.text_field :registered_state %></br>
 	<%= f.label      :license_number %>
 	<%= f.text_field :license_number %></br>
-	<%= f.submit 'Submit', class: 'button' %>     
+	<%= f.label      :phone_number %>
+	<%= f.text_field :phone_number %></br>
+	<%= f.submit 'Submit', class: 'btn-primary' %>     
 <% end %>

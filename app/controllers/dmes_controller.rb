@@ -8,7 +8,7 @@ class DmesController < ApplicationController
 		dme = Dme.new(dme_params)
 
 		if dme.save
-			redirect_to login_path
+			redirect_to '/'
 		else
 			flash[:error] = dme.errors.full_messages
 			redirect_to new_dme_path

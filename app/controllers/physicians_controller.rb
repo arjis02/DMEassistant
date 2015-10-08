@@ -8,7 +8,7 @@ class PhysiciansController < ApplicationController
 		physician = Physician.new(physician_params)
 
 		if physician.save
-			redirect_to login_path
+			redirect_to '/'
 		else
 			flash[:error] = physician.errors.full_messages
 			redirect_to new_physician_path
