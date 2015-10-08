@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20151008012511) do
 
   create_table "dmes", force: :cascade do |t|
     t.string   "name",            limit: 256, null: false
+    t.string   "email",           limit: 128, null: false
     t.string   "street_address",  limit: 256
     t.string   "city",            limit: 64
     t.string   "state",           limit: 8
