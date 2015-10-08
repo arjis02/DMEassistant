@@ -35,14 +35,15 @@ ActiveRecord::Schema.define(version: 20151008012511) do
   end
 
   create_table "dmes", force: :cascade do |t|
-    t.string   "name",           limit: 256, null: false
-    t.string   "street_address", limit: 256
-    t.string   "city",           limit: 64
-    t.string   "state",          limit: 8
-    t.string   "zipcode",        limit: 64
+    t.string   "name",            limit: 256, null: false
+    t.string   "street_address",  limit: 256
+    t.string   "city",            limit: 64
+    t.string   "state",           limit: 8
+    t.string   "zipcode",         limit: 64
     t.string   "insurances"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
+    t.string   "password_digest",             null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   create_table "employments", force: :cascade do |t|
@@ -110,6 +111,7 @@ ActiveRecord::Schema.define(version: 20151008012511) do
     t.string   "license_number",   limit: 256
     t.string   "registered_state", limit: 64
     t.string   "phone_number",     limit: 128
+    t.string   "password_digest",              null: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
   end
@@ -122,6 +124,7 @@ ActiveRecord::Schema.define(version: 20151008012511) do
     t.string   "license_number",   limit: 256
     t.string   "registered_state", limit: 64
     t.string   "phone_number",     limit: 128
+    t.string   "password_digest",              null: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
   end
