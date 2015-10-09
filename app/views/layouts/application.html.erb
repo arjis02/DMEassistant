@@ -6,17 +6,20 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+	<body>
 
-	<header>
-		<% if session[:physician_id] || session[:therapist_id] || session[:dme_id] %>
-			<%= form_for :session, url: logout_path, method: 'delete' do |f| %>
-				<%= f.submit 'Logout', class: 'btn-primary logout-btn' %>
+		<header>
+			<% if session[:physician_id] || session[:therapist_id] || session[:dme_id] %>
+				<%= form_for :session, url: logout_path, method: 'delete' do |f| %>
+					<%= f.submit 'Logout', class: 'btn-primary logout-btn' %>
+				<% end %>
 			<% end %>
-		<% end %>
-	</header>
+		</header>
 
-	<%= yield %>
+		<div id="main-container" class="container-fluid">
+			<%= yield %>
+		</div>		
 
-</body>
+	</body>
+	
 </html>

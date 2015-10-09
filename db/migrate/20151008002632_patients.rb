@@ -12,7 +12,9 @@ class Patients < ActiveRecord::Migration
   		t.string   :notes
       t.string   :height, null: false, limit: 128
       t.string   :weight, null: false, limit: 128
-      t.datetime :discharge_date
+      t.string   :gender, limit: 8
+      t.date     :birthday
+      t.date     :discharge_date
 
   		t.timestamps null: false
   	end

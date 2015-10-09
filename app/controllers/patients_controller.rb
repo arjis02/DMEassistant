@@ -1,5 +1,13 @@
 class PatientsController < ApplicationController
 
+	def index
+		@patients = Patient.all
+	end
+
+	def show
+		@patients = Patient.all
+	end
+
 	def new
 		@patient = Patient.new
 	end
@@ -19,7 +27,7 @@ class PatientsController < ApplicationController
 	private
 
 	def patient_params
-		params.require(:patient).permit(:first_name, :last_name, :email, :street_address, :city, :state, :zipcode, :phone_number, :height, :weight, :notes, :discharge_date)
+		params.require(:patient).permit(:first_name, :last_name, :email, :street_address, :city, :state, :zipcode, :phone_number, :height, :weight, :notes, :gender, :birthday, :discharge_date)
 	end
 
 end

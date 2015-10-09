@@ -81,8 +81,8 @@ ActiveRecord::Schema.define(version: 20151008012511) do
     t.integer  "wheelchair_id"
     t.integer  "bed_id"
     t.integer  "dme_id"
-    t.datetime "date_approved"
-    t.datetime "date_filled"
+    t.date     "date_approved"
+    t.date     "date_filled"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
@@ -99,7 +99,9 @@ ActiveRecord::Schema.define(version: 20151008012511) do
     t.string   "notes"
     t.string   "height",         limit: 128, null: false
     t.string   "weight",         limit: 128, null: false
-    t.datetime "discharge_date"
+    t.string   "gender",         limit: 8
+    t.date     "birthday"
+    t.date     "discharge_date"
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
   end
