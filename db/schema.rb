@@ -99,6 +99,7 @@ ActiveRecord::Schema.define(version: 20151008012511) do
     t.string   "notes"
     t.string   "height",         limit: 128, null: false
     t.string   "weight",         limit: 128, null: false
+    t.string   "gender",         limit: 8
     t.date     "birthday"
     t.date     "discharge_date"
     t.datetime "created_at",                 null: false
