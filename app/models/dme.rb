@@ -7,4 +7,6 @@ class Dme < ActiveRecord::Base
 
 	has_many :patients, through: :medicalrelations
 	has_many :facilities, through: :orders
+
+	validates :email, uniqueness: true
 end
