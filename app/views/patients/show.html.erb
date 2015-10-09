@@ -1,1 +1,16 @@
-show.html.erb
+<table class="table table-hover">
+	<th>
+		<td>First Name</td>
+		<td>Last Name</td>
+		<td>DOB</td>
+		<td>Gender</td>
+		<td>Discharge Date</td>
+	</th>
+	<% @patients.each do |patient| %>
+		<tr><%= @patient.first_name %></tr>
+		<tr><%= @patient.last_name %></tr>
+		<tr><%= @patient.birthday %></tr>
+		<tr><%= @patient.gender %></tr>
+		<tr><%= @patient.discharge_date %></tr>
+	<% end %>
+</table>
