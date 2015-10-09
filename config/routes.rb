@@ -31,7 +31,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :order
+  resources :orders
+  resources :patients
 
   post '/sessions' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
