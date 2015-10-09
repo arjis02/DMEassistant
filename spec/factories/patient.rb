@@ -8,6 +8,8 @@ FactoryGirl.define do
 		state { Faker::Address.state_abbr }
 		zipcode { Faker::Address.zip_code }
 		phone_number { Faker::PhoneNumber.phone_number }
+		height { Faker::Number.number(2) }
+		weight { Faker::Number.number(3) }
 		birthday { Faker::Date.between(10000.days.ago, 15000.days.ago) }
 		discharge_date { Faker::Date.forward(5) }
 	end
