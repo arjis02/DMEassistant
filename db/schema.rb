@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151008012511) do
+ActiveRecord::Schema.define(version: 20151009180901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,10 +49,9 @@ ActiveRecord::Schema.define(version: 20151008012511) do
 
   create_table "employments", force: :cascade do |t|
     t.integer  "facility_id"
-    t.integer  "therapist_id"
-    t.integer  "physician_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "professional_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "facilities", force: :cascade do |t|
@@ -66,25 +65,22 @@ ActiveRecord::Schema.define(version: 20151008012511) do
   end
 
   create_table "medicalrelations", force: :cascade do |t|
-    t.integer  "physician_id"
-    t.integer  "therapist_id"
+    t.integer  "professional_id"
     t.integer  "dme_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "orders", force: :cascade do |t|
     t.integer  "patient_id"
-    t.integer  "physician_id"
-    t.integer  "therapist_id"
+    t.integer  "professional_id"
     t.integer  "facility_id"
-    t.integer  "wheelchair_id"
-    t.integer  "bed_id"
     t.integer  "dme_id"
+    t.string   "items"
     t.date     "date_approved"
     t.date     "date_filled"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "patients", force: :cascade do |t|
@@ -117,6 +113,20 @@ ActiveRecord::Schema.define(version: 20151008012511) do
     t.string   "password_digest",              null: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
+  end
+
+  create_table "professionals", force: :cascade do |t|
+    t.string   "first_name",       limit: 128,                 null: false
+    t.string   "last_name",        limit: 128,                 null: false
+    t.string   "email",            limit: 128,                 null: false
+    t.string   "specialty",        limit: 128
+    t.string   "license_number",   limit: 256
+    t.string   "registered_state", limit: 64
+    t.string   "phone_number",     limit: 128
+    t.string   "password_digest",                              null: false
+    t.boolean  "physician",                    default: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
   end
 
   create_table "therapists", force: :cascade do |t|
