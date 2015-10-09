@@ -31,6 +31,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :order
+
   post '/sessions' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
   # Example resource route with options:
