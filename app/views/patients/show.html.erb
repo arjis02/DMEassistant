@@ -7,10 +7,12 @@
 		<td>Discharge Date</td>
 	</th>
 	<% @patients.each do |patient| %>
-		<tr><%= @patient.first_name %></tr>
-		<tr><%= @patient.last_name %></tr>
-		<tr><%= @patient.birthday %></tr>
-		<tr><%= @patient.gender %></tr>
-		<tr><%= @patient.discharge_date %></tr>
+		<tr>
+			<td><%= patient.first_name %></td>
+			<td><%= patient.last_name %></td>
+			<td><%= patient.birthday %></td>
+			<td><%= patient.gender %></td>
+			<td><%= patient.discharge_date %></td>
+		</tr>
 	<% end %>
 </table>
