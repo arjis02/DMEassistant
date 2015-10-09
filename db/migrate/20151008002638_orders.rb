@@ -8,8 +8,8 @@ class Orders < ActiveRecord::Migration
   		t.references :wheelchair
   		t.references :bed
   		t.references :dme
-  		t.datetime   :date_approved
-  		t.datetime   :date_filled
+  		t.date       :date_approved
+  		t.date       :date_filled
 
   		t.timestamps null: false
   	end
