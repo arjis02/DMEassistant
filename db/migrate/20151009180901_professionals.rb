@@ -9,7 +9,7 @@ class Professionals < ActiveRecord::Migration
   		t.string  :registered_state, limit: 64
   		t.string  :phone_number, limit: 128
       t.string  :password_digest, null: false
-      t.boolean :physician
+      t.boolean  :physician
 
   		t.timestamps null: false
   	end
