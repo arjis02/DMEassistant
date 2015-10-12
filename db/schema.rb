@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 20151009180901) do
   create_table "medicalrelations", force: :cascade do |t|
     t.integer  "professional_id"
     t.integer  "dme_id"
+    t.integer  "patient_id"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
