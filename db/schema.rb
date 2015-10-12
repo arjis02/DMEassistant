@@ -116,17 +116,17 @@ ActiveRecord::Schema.define(version: 20151009180901) do
   end
 
   create_table "professionals", force: :cascade do |t|
-    t.string   "first_name",       limit: 128,                 null: false
-    t.string   "last_name",        limit: 128,                 null: false
-    t.string   "email",            limit: 128,                 null: false
+    t.string   "first_name",       limit: 128, null: false
+    t.string   "last_name",        limit: 128, null: false
+    t.string   "email",            limit: 128, null: false
     t.string   "specialty",        limit: 128
     t.string   "license_number",   limit: 256
     t.string   "registered_state", limit: 64
     t.string   "phone_number",     limit: 128
-    t.string   "password_digest",                              null: false
-    t.boolean  "physician",                    default: false
-    t.datetime "created_at",                                   null: false
-    t.datetime "updated_at",                                   null: false
+    t.string   "password_digest",              null: false
+    t.boolean  "physician"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "therapists", force: :cascade do |t|

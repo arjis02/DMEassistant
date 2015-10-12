@@ -9,7 +9,7 @@
 	<body>
 
 		<header>
-			<% if session[:physician_id] || session[:therapist_id] || session[:dme_id] %>
+			<% if session[:professional_id] %>
 				<%= form_for :session, url: logout_path, method: 'delete' do |f| %>
 					<%= f.submit 'Logout', class: 'btn-primary logout-btn' %>
 				<% end %>

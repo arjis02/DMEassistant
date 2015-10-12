@@ -1,5 +1,4 @@
 class ProfessionalsController < ApplicationController
-	# before_action :updated_params
 
 	def new
 		@professional = Professional.new
@@ -27,13 +26,5 @@ class ProfessionalsController < ApplicationController
 	def professional_params
 		params.require(:professional).permit(:first_name, :last_name, :email, :specialty, :registered_state, :phone_number, :license_number, :physician, :password)
 	end
-
-	# def updated_params
-	# 	if params[:physician] == "1"
-	# 		professional_params.merge(physician: true)
-	# 	else
-	# 		professional_params
-	# 	end
-	# end
 
 end
