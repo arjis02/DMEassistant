@@ -1,0 +1,11 @@
+<h1><%= @facility.name %></h1>
+<div class="address">
+	<%= @facility.street_address %><br/>
+	<%= @facility.city %><br/>
+	<%= @facility.state %><br/>
+	<%= @facility.zipcode %>
+</div>
+
+<div class="patient-list">
+<%= render partial: '/patients/index', locals: { patients: @facility.patients } %>
+</div>
