@@ -1,1 +1,45 @@
-Hello dashboard
+<h1>Your dashboard:</h1>
+
+<h3>Your facilities:</h3>
+<table class="table table-hover">
+	<tr>
+		<th>Company Name</th>
+		<th>Street Address</th>
+		<th>City</th>
+		<th>State</th>
+		<th>Zipcode</th>
+	</tr>
+	<% @professional.facilities.each do |facility| %>
+		<tr>
+			<td><%= facility.name %></td>
+			<td><%= facility.street_address %></td>
+			<td><%= facility.city %></td>
+			<td><%= facility.state %></td>
+			<td><%= facility.zipcode %></td>
+		</tr>
+	<% end %>
+</table>
+<%= link_to "Add Facility", facilities_path %>
+
+<h3>Your patients:</h3>
+<% if @professional.patients %>
+	<table class="table table-hover">
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>DOB</th>
+			<th>Gender</th>
+			<th>Discharge Date</th>
+		</tr>
+		<% @professional.patients.each do |patient| %>
+			<tr>
+				<td><%= patient.first_name %></td>
+				<td><%= patient.last_name %></td>
+				<td><%= patient.birthday %></td>
+				<td><%= patient.gender %></td>
+				<td><%= patient.discharge_date %></td>
+			</tr>
+		<% end %>
+	</table>
+<% end %>
+<%= link_to "Add patient", patients_path %>
