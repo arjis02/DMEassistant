@@ -9,3 +9,8 @@
 <div class="patient-list">
 <%= render partial: '/patients/index', locals: { patients: @facility.patients } %>
 </div>
+
+<%= form_for :employments, url: employments_path, method: 'post' do |f| %>
+	<%= f.hidden_field :facility_id, :value => @facility.id %>
+	<%= f.submit 'Add facility' %>
+<% end %>
