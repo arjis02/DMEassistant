@@ -8,8 +8,8 @@
 	</tr>
 	<% patients.each do |patient| %>
 		<tr>
-			<td><%= patient.first_name %></td>
-			<td><%= patient.last_name %></td>
+			<td><%= link_to patient.first_name, patient_path(patient) %></td>
+			<td><%= link_to patient.last_name, patient_path(patient) %></td>
 			<td><%= patient.birthday %></td>
 			<td><%= patient.gender %></td>
 			<td><%= patient.discharge_date %></td>
