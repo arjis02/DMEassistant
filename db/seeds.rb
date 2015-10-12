@@ -1,6 +1,10 @@
 Patient.delete_all
+Facility.delete_all
 
 10.times do
-	FactoryGirl.create(:patient)
-	FactoryGirl.create(:facility)
+	facility = FactoryGirl.create(:facility)
+	10.times do
+		patient = FactoryGirl.create(:patient)
+		facility.patients << patient
+	end
 end
