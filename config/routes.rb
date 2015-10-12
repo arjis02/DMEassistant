@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :dmes 
   resources :orders
   resources :patients
+  resources :facilities
 
   get '/dashboard' => 'dashboard#show'
 
