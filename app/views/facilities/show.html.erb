@@ -6,13 +6,7 @@
 	<%= @facility.zipcode %>
 </div>
 
+<h3>Patients:</h3>
 <div class="patient-list">
 <%= render partial: '/patients/index', locals: { patients: @facility.patients } %>
 </div>
-
-<% unless @facility.employs?(current_user) %>
-	<%= form_for :employments, url: employments_path, method: 'post' do |f| %>
-		<%= f.hidden_field :facility_id, :value => @facility.id %>
-		<%= f.submit 'Add facility' %>
-	<% end %>
-<% end %>
