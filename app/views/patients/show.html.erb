@@ -1,13 +1,23 @@
-<%= @patient.first_name %>
-<%= @patient.last_name %>
-<%= @patient.birthday %>
-<%= @patient.gender %>
-<%= @patient.discharge_date %>
+<div class="row">
+	<h1><%= @patient.last_name %>, <%= @patient.first_name %></h1>
+</div>
+<div class="row">
+	<div class="col-xs-12 col-md-6">
+		DOB:<%= @patient.birthday %><br/>
+		Gender:<%= @patient.gender %>
+	</div>
+	<div class="col-xs-12 col-md-6">
+		Discharge Date:<%= @patient.discharge_date %>
+	</div>
+</div>
 
-<% if @patient.orders %>
+<h3>Open Orders:</h3>
+<% if @patient.orders.count > 0 %>
 	<div class="orders-list">
 		<%= render partial: "/orders/index", locals: { orders: @patient.orders } %>
 	</div>
+<% else %>
+	<h5>-No pending orders-</h5>
 <% end %>
 
 <div class="create-order">
