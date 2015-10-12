@@ -4,6 +4,12 @@
 <%= @patient.gender %>
 <%= @patient.discharge_date %>
 
+<% if @patient.orders %>
+	<div class="orders-list">
+		<%= render partial: "/orders/index", locals: { orders: @patient.orders } %>
+	</div>
+<% end %>
+
 <div class="create-order">
 	<%= link_to "Create Order", orders_path %>
 </div>
