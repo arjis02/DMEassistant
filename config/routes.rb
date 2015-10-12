@@ -17,8 +17,10 @@ Rails.application.routes.draw do
   resources :professionals
   resources :dmes 
   resources :orders
-  resources :patients
-  resources :facilities
+ 
+  resources :facilities do
+    resource :patients
+  end
 
   get '/dashboard' => 'dashboard#show'
 
