@@ -25,6 +25,8 @@ Rails.application.routes.draw do
   get '/dashboard' => 'dashboard#show'
   post '/medicalrelations' => 'medicalrelations#create'
   delete '/medicalrelations' => 'medicalrelations#destroy'
+  post '/employments' => 'employments#create'
+  delete '/employments' => 'employments#destroy'
 
   post '/sessions' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
