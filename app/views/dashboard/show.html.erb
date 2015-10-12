@@ -11,7 +11,7 @@
 	</tr>
 	<% @professional.facilities.each do |facility| %>
 		<tr>
-			<td><%= facility.name %></td>
+			<td><%= link_to facility.name, facility_path(facility) %></td>
 			<td><%= facility.street_address %></td>
 			<td><%= facility.city %></td>
 			<td><%= facility.state %></td>
