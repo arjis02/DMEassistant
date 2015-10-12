@@ -3,6 +3,7 @@ class MedicalRelations < ActiveRecord::Migration
   	create_table :medicalrelations do |t|
   		t.references :professional
   		t.references :dme 
+  		t.references :patient
 
   		t.timestamps null: false
   	end
