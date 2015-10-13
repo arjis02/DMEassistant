@@ -9,4 +9,7 @@ class Professional < ActiveRecord::Base
 	has_many :patients, through: :medicalrelations
 
 	validates :email, uniqueness: true
+
+	scope :physician, -> { where(physician: true) }
+	scope :therapist, -> { where(physician: false) }
 end
