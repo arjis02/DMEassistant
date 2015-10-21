@@ -4,6 +4,7 @@ class Wheelchairs < ActiveRecord::Migration
   		t.string :type
   		t.string :front_riggings
   		t.string :arms
+  		t.references :order
 
   		t.timestamps null: false
   	end
