@@ -8,6 +8,6 @@ class Professional < ActiveRecord::Base
 
 	validates :email, uniqueness: true
 
-	scope :physician, -> { where(physician: true) }
-	scope :therapist, -> { where(physician: false) }
+	scope :physicians, -> { where(is_physician: true) }
+	scope :therapists, -> { where(is_physician: false) }
 end
