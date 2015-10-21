@@ -1,6 +1,6 @@
 class Providers < ActiveRecord::Migration
   def change
-  	create_table :facilities do |t|
+  	create_table :providers do |t|
 			t.string :name, null: false, limit: 256
 			t.string :street_address, null: false, limit: 256
 			t.string :city, null: false, limit: 64
