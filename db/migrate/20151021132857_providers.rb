@@ -1,4 +1,4 @@
-class Facilities < ActiveRecord::Migration
+class Providers < ActiveRecord::Migration
   def change
   	create_table :facilities do |t|
 			t.string :name, null: false, limit: 256
@@ -8,6 +8,7 @@ class Facilities < ActiveRecord::Migration
 			t.string :zipcode, null: false, limit: 64
 			t.string :phone_number, null: false, limit: 256
 			t.string :email, null: false, limit: 128
+			t.string :insurances
 			t.string :password_digest, null: false
 
 			t.timestamps null: false
