@@ -3,6 +3,7 @@ class Beds < ActiveRecord::Migration
   	create_table :beds do |t|
   		t.string :bed_type
   		t.string :rails
+  		t.references :order
 
   		t.timestamps null: false
   	end
