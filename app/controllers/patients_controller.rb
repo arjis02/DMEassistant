@@ -13,11 +13,10 @@ class PatientsController < ApplicationController
 	end
 
 	def create
-		patient = Patient.new(patient_params)
+		@patient = Patient.new(patient_params)
 
-		if patient.save
-			redirect_to dashboard_therapists_path if session[:therapist_id]
-			redirect_to dashboard_physicians_path if session[:physician_id]
+		if @patient.save
+			render "orders/new"
 		else
 			flash[:error] = patient.errors.full_messages
 			redirect_to new_patient_path
@@ -27,7 +26,7 @@ class PatientsController < ApplicationController
 	private
 
 	def patient_params
-		params.require(:patient).permit(:first_name, :last_name, :email, :street_address, :city, :state, :zipcode, :phone_number, :height, :weight, :notes, :gender, :birthday, :discharge_date)
+		params.require(:patient).permit(:first_name, :last_name, :email, :street_address, :city, :state, :zipcode, :phone_number, :height, :weight, :birthday, :discharge_date, :diagnosis, :insurance_1, :insurance_2, :notes, :gender)
 	end
 
 end
