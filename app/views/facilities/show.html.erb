@@ -6,7 +6,9 @@
 	<%= @facility.zipcode %>
 </div>
 
-<h3>Patients:</h3>
-<div class="patient-list">
-<%= render partial: '/patients/index', locals: { patients: @facility.patients } %>
+<h3>Pending Orders:</h3>
+<div class="pending-order-list">
+	<%= render partial: '/orders/index', locals: { orders: @facility.orders } %>
 </div>
+
+<%= link_to 'Add new order', new_order_path %>
