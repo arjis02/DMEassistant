@@ -12,29 +12,38 @@
   <% end %>
 
   <div class="field form-group">
-    <%= f.label :type, class: 'col-sm-2 control-label' %>
+    <%= f.label :wheelchair_type, class: 'col-sm-2 control-label' %>
     <div class="col-sm-10">
-      <%= radio_button_tag(:type, "k1") %>
-      <%= label_tag(:type_k1, "Standard Wheelchair") %><br/>
-      <%= radio_button_tag(:type, "k3") %>
-      <%= label_tag(:type_k3, "Lightweight Wheelchair") %><br/>
-      <%= radio_button_tag(:type, "k6") %>
-      <%= label_tag(:type_k6, "Heavy Duty Wheelchair") %><br/>
-      <%= radio_button_tag(:type, "k7") %>
-      <%= label_tag(:type_k7, "Extra HD Wheelchair") %><br/>
+      <%= radio_button_tag(:wheelchair_type, "k1") %>
+      <%= label_tag(:wheelchair_type_k1, "Standard") %><br/>
+      <%= radio_button_tag(:wheelchair_type, "k3") %>
+      <%= label_tag(:wheelchair_type_k3, "Lightweight") %><br/>
+      <%= radio_button_tag(:wheelchair_type, "k6") %>
+      <%= label_tag(:wheelchair_type_k6, "Heavy Duty") %><br/>
+      <%= radio_button_tag(:wheelchair_type, "k7") %>
+      <%= label_tag(:wheelchair_type_k7, "Extra HD") %><br/>
     </div>
   </div>
   <div class="field form-group">
     <%= f.label :front_riggings, class: 'col-sm-2 control-label' %>
     <div class="col-sm-10">
-      <%= radio_button_tag(:fr, "std") %>
-      <%= label_tag(:fr_std, "Standard Footrests") %><br/>
-      <%= radio_button_tag(:fr, "ele") %>
-      <%= label_tag(:fr_ele, "Elevating Legrests") %><br/>
-      <%= radio_button_tag(:fr, "hd") %>
-      <%= label_tag(:fr_hd, "Heavy Duty Legrests") %><br/>
-      <%= radio_button_tag(:fr, "art") %>
-      <%= label_tag(:fr_art, "Articulting Legrests") %><br/>
+      <%= radio_button_tag(:front_riggings, "std") %>
+      <%= label_tag(:front_riggings_std, "Standard Footrests") %><br/>
+      <%= radio_button_tag(:front_riggings, "ele") %>
+      <%= label_tag(:front_riggings_ele, "Elevating Legrests") %><br/>
+      <%= radio_button_tag(:front_riggings, "hd") %>
+      <%= label_tag(:front_riggings_hd, "Heavy Duty Legrests") %><br/>
+      <%= radio_button_tag(:front_riggings, "art") %>
+      <%= label_tag(:front_riggings_art, "Articulting Legrests") %><br/>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :bed_type, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= radio_button_tag(:bed_type, "std") %>
+      <%= label_tag(:bed_type_std, "Standard") %><br/>
+      <%= radio_button_tag(:bed_type, "bariatric") %>
+      <%= label_tag(:bed_type_bariatric, "Bariatric") %><br/>
     </div>
   </div>
   
