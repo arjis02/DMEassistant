@@ -1,12 +1,20 @@
-Order.delete_all
-Admission.delete_all
-Patient.delete_all
 Facility.delete_all
+Professional.delete_all
+Provider.delete_all
+Patient.delete_all
+Order.delete_all
+Wheelchair.delete_all
+Bed.delete_all
+Employment.delete_all
 
-10.times do
+5.times do
 	facility = FactoryGirl.create(:facility)
-	10.times do
-		patient = FactoryGirl.create(:patient)
-		admission = Admission.create(patient_id: patient.id, facility_id: facility.id)
-	end
+	5.times do
+		professional = FactoryGirl.create(:professional)
+		facility.professionals << professional
+	end	
+end
+
+5.times do
+	provider = FactoryGirl.create(:provider)
 end
