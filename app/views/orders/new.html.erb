@@ -1,6 +1,12 @@
-<h3>Patient:</h3>
-<%= @patient.first_name %>
+<h3>Facility:</h3>
+<%= current_facility.name %>
 
 <h3>Professional:</h3>
+<% if current_user.is_physician %>
+	<span>Dr.</span>
+<% end %>
 <%= current_user.first_name %>
 <%= current_user.last_name %>
+
+<h3>Patient Info:</h3>
+<%= render partial: "patients/new", locals: { facility: current_facility } %>
