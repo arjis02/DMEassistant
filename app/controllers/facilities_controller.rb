@@ -5,5 +5,6 @@ class FacilitiesController < ApplicationController
 
 	def show
 		@facility = Facility.find(params[:id])
+		session[:facility_id] = @facility.id
 	end
 end

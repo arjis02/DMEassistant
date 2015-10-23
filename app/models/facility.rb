@@ -5,6 +5,7 @@ class Facility < ActiveRecord::Base
 	has_many :employments
 
 	has_many :professionals, through: :employments
+	has_many :patients, through: :orders
 
 	validates :email, uniqueness: true
 

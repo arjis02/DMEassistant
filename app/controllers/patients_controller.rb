@@ -16,7 +16,7 @@ class PatientsController < ApplicationController
 		@patient = Patient.new(patient_params)
 
 		if @patient.save
-			render "orders/new"
+			render "show"
 		else
 			flash[:error] = patient.errors.full_messages
 			redirect_to new_patient_path
