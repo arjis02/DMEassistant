@@ -13,7 +13,8 @@ class PatientsController < ApplicationController
 	end
 
 	def create
-		@patient = Patient.new(patient_params)
+		updated_params = patient_params.merge(gender: params[:gender])
+		@patient = Patient.new(updated_params)
 
 		if @patient.save
 			render "show"
