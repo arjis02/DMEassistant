@@ -15,19 +15,14 @@ Rails.application.routes.draw do
   #   resources :products
 
   resources :professionals
-  resources :dmes 
+  resources :providers
   resources :orders
- 
-  resources :facilities do
-    resource :patients
-  end
-
+  resources :facilities
+  resources :patients
+  
   get '/dashboard' => 'dashboard#show'
-  post '/medicalrelations' => 'medicalrelations#create'
-  delete '/medicalrelations' => 'medicalrelations#destroy'
   post '/employments' => 'employments#create'
   delete '/employments' => 'employments#destroy'
-  get '/patient' => 'patients#show'
 
   post '/sessions' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
