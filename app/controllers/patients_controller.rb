@@ -9,12 +9,14 @@ class PatientsController < ApplicationController
 	end
 
 	def new
-		@patient = Patient.new
+		@patient = Patient.new()
 	end
 
 	def create
+		facility = Facility.find(session[:facility_id])
 		updated_params = patient_params.merge(gender: params[:gender])
 		@patient = Patient.new(updated_params)
+		facility.patients << @patient
 
 		if @patient.save
 			render "show"
