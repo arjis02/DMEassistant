@@ -1,14 +1,23 @@
 <div class="row">
 	<h1><%= @patient.last_name %>, <%= @patient.first_name %></h1>
+	<%= @patient.street_address %><br/>
+	<%= @patient.city %>,
+	<%= @patient.state %>
+	<%= @patient.zipcode %><br/>
+	<%= @patient.phone_number %><br/>
+	<%= @patient.email %>
 </div>
-<div class="row">
-	<div class="col-xs-12 col-md-6">
-		DOB:<%= @patient.birthday %><br/>
-		Gender:<%= @patient.gender %>
-	</div>
-	<div class="col-xs-12 col-md-6">
-		Discharge Date:<%= @patient.discharge_date %>
-	</div>
+
+<div class="patient-info">
+	DOB:<%= @patient.birthday %><br/>
+	Gender:<%= @patient.gender %><br/>
+	Height:<%= @patient.height %><br/>
+	Weight:<%= @patient.weight %><br/>
+	Discharge Date:<%= @patient.discharge_date %><br/>
+	Diagnosis:<%= @patient.diagnosis %><br/>
+	Insurance 1:<%= @patient.insurance_1 %><br/>
+	Insurance 2:<%= @patient.insurance_2 %><br/>
+	Notes: <%= @patient.notes %><br/>
 </div>
 
 <h3>Open Orders:</h3>

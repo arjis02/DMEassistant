@@ -12,3 +12,8 @@
 </div>
 
 <%= link_to 'Add new order', new_order_path %>
+
+<h3>Active Patients</h3>
+<div class="active-patient-list">
+	<%= render partial: '/patients/index', locals: { patients: @facility.patients } %>
+</div>
