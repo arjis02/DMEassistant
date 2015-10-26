@@ -6,12 +6,15 @@ Order.delete_all
 Wheelchair.delete_all
 Bed.delete_all
 Employment.delete_all
+Admission.delete_all
 
 5.times do
 	facility = FactoryGirl.create(:facility)
 	5.times do
 		professional = FactoryGirl.create(:professional)
 		facility.professionals << professional
+		patient = FactoryGirl.create(:patient)
+		facility.patients << patient
 	end	
 end
 
