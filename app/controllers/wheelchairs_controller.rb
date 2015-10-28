@@ -4,10 +4,12 @@ class WheelchairsController < ApplicationController
 	end
 
 	def create
+		@order = Order.new()
 		@wheelchair = Wheelchair.new(wheelchair_params)
+		@order.wheelchairs << @wheelchair
 
 		if @wheelchair.save
-			render "order/show"
+			render "orders/show"
 		else
 			flash[:error] = wheelchair.errors.full_messages
 			redirect_to new_order_path
@@ -17,6 +19,6 @@ class WheelchairsController < ApplicationController
 	private
 
 	def wheelchair_params
-		params.require(:wheelchair).permit(:type, :front_riggings, :arms, :order_id)
+		params.require(:wheelchair).permit(:type, :front_riggings, :arms)
 	end
 end
