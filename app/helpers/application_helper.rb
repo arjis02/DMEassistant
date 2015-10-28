@@ -6,4 +6,8 @@ module ApplicationHelper
 	def current_facility
 		facility = session[:facility_id] ? Facility.find(session[:facility_id]) : nil
 	end
+
+	def current_patient
+		patient = session[:patient_id] ? Patient.find(session[:patient_id]) : nil
+	end
 end
