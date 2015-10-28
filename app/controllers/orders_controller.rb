@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
 	def new
-		patient = Patient.find(params[:id])
-		@order = patient.orders.new()
+		patient = Patient.find(session[:patient_id])
+		@order = Order.new()
 	end
 
 	def create
