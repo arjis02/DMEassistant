@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :orders
   resources :facilities
   resources :patients
+  resources :wheelchairs
   
   get '/dashboard' => 'dashboard#show'
   post '/employments' => 'employments#create'

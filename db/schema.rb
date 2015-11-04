@@ -116,9 +116,9 @@ ActiveRecord::Schema.define(version: 20151026132605) do
   end
 
   create_table "wheelchairs", force: :cascade do |t|
-    t.string   "type"
-    t.string   "front_riggings"
-    t.string   "arms"
+    t.integer  "wc_type"
+    t.integer  "front_riggings"
+    t.integer  "arms"
     t.integer  "order_id"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
