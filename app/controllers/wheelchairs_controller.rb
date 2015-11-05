@@ -4,9 +4,9 @@ class WheelchairsController < ApplicationController
 	end
 
 	def create
-		@order = Order.new()
+		@order = Order.create()
 		@wheelchair = Wheelchair.new(wheelchair_params)
-		@order.wheelchairs << @wheelchair
+		@order.wheelchair = @wheelchair
 
 		if @wheelchair.save
 			render "orders/show"
@@ -19,6 +19,6 @@ class WheelchairsController < ApplicationController
 	private
 
 	def wheelchair_params
-		params.require(:wheelchair).permit(:type, :front_riggings, :arms)
+		params.require(:wheelchair).permit(:wc_type, :front_riggings, :arms)
 	end
 end
