@@ -1,3 +1,16 @@
 <h1>Your order</h1>
+
+<h3>Patient:</h3>
 <%= current_patient.first_name %>
 <%= current_patient.last_name %>
+
+<h3>Facility:</h3>
+<%= current_facility.name %>
+
+<h3>Items:</h3>
+<% if @order.wheelchair %>
+	<h5>Wheelchair</h5>
+	Type: <%= @order.wheelchair.wheelchair_type %></br>
+	Front Riggings: <%= @order.wheelchair.fr %></br>
+	Arms Type: <%= @order.wheelchair.arms_type %>
+<% end %>
