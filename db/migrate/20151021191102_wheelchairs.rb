@@ -1,9 +1,9 @@
 class Wheelchairs < ActiveRecord::Migration
   def change
   	create_table :wheelchairs do |t|
-  		t.integer :wc_type
-  		t.integer :front_riggings
-  		t.integer :arms
+  		t.string :wc_type
+  		t.string :front_riggings
+  		t.string :arms
   		t.references :order
 
   		t.timestamps null: false
