@@ -9,7 +9,7 @@ class WheelchairsController < ApplicationController
 		@order.wheelchair = @wheelchair
 
 		if @wheelchair.save
-			redirect_to order_path(@order)
+			render '/orders/show'
 		else
 			flash[:error] = wheelchair.errors.full_messages
 			redirect_to new_order_path
