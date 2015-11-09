@@ -9,15 +9,15 @@ Employment.delete_all
 Admission.delete_all
 
 5.times do
-	facility = FactoryGirl.create(:facility)
-	5.times do
-		professional = FactoryGirl.create(:professional)
-		facility.professionals << professional
-		patient = FactoryGirl.create(:patient)
-		facility.patients << patient
-	end	
+  facility = FactoryGirl.create(:facility)
+  5.times do
+    professional = FactoryGirl.create(:professional)
+    facility.professionals << professional
+    patient = FactoryGirl.create(:patient)
+    facility.patients << patient
+  end
 end
 
 5.times do
-	provider = FactoryGirl.create(:provider)
+  provider = FactoryGirl.create(:provider)
 end

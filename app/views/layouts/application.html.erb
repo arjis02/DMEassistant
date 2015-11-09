@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>DMEassistant</title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-	<body>
+  <head>
+    <title>DMEassistant</title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
 
-		<header>
-			<% if session[:professional_id] %>
-				<%= form_for :session, url: logout_path, method: 'delete' do |f| %>
-					<%= f.submit 'Logout', class: 'btn-primary logout-btn' %>
-				<% end %>
-			<% end %>
-		</header>
+  <body>
+    <header>
+      <% if session[:professional_id] %>
+        <%= form_for :session, url: logout_path, method: 'delete' do |f| %>
+        <%= f.submit 'Logout', class: 'btn-primary logout-btn' %>
+      <% end %>
+    </header>
 
-		<div id="main-container" class="container-fluid">
-			<%= yield %>
-		</div>		
+    <div id="main-container" class="container-fluid">
+      <%= yield %>
+    </div>		
+  </body>
 
-	</body>
-	
 </html>

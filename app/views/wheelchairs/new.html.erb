@@ -1,46 +1,44 @@
 <h3>Order Form:</h3>
 <%= form_for :wheelchair, url: wheelchairs_path, html: {class: 'form-horizontal'} do |f| %>
+  <div class="field form-group">
+    <%= f.label :wheelchair_type, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= radio_button_tag("wheelchair[wc_type]", "0") %>
+      <%= label_tag(:wc_type, "Standard") %><br/>
+      <%= radio_button_tag("wheelchair[wc_type]", "1") %>
+      <%= label_tag(:wc_type, "Lightweight") %><br/>
+      <%= radio_button_tag("wheelchair[wc_type]", "2") %>
+      <%= label_tag(:wc_type, "Heavy Duty") %><br/>
+      <%= radio_button_tag("wheelchair[wc_type]", "3") %>
+      <%= label_tag(:wc_type, "Extra HD") %><br/>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :front_riggings, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= radio_button_tag("wheelchair[front_riggings]", "0") %>
+      <%= label_tag(:front_riggings_std, "Standard Footrests") %><br/>
+      <%= radio_button_tag("wheelchair[front_riggings]", "1") %>
+      <%= label_tag(:front_riggings_ele, "Elevating Legrests") %><br/>
+      <%= radio_button_tag("wheelchair[front_riggings]", "2") %>
+      <%= label_tag(:front_riggings_hd, "Heavy Duty Legrests") %><br/>
+      <%= radio_button_tag("wheelchair[front_riggings]", "3") %>
+      <%= label_tag(:front_riggings_art, "Articulting Legrests") %><br/>
+    </div>
+  </div>
+  <div class="field form-group">
+    <%= f.label :arms, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-10">
+      <%= radio_button_tag("wheelchair[arms]", "0") %>
+      <%= label_tag(:arms_k1, "Desk") %><br/>
+      <%= radio_button_tag("wheelchair[arms]", "1") %>
+      <%= label_tag(:arms_k3, "Full") %><br/>
+    </div>
+  </div>
 
-<div class="field form-group">
-  <%= f.label :wheelchair_type, class: 'col-sm-2 control-label' %>
-  <div class="col-sm-10">
-    <%= radio_button_tag("wheelchair[wc_type]", "0") %>
-    <%= label_tag(:wc_type, "Standard") %><br/>
-    <%= radio_button_tag("wheelchair[wc_type]", "1") %>
-    <%= label_tag(:wc_type, "Lightweight") %><br/>
-    <%= radio_button_tag("wheelchair[wc_type]", "2") %>
-    <%= label_tag(:wc_type, "Heavy Duty") %><br/>
-    <%= radio_button_tag("wheelchair[wc_type]", "3") %>
-    <%= label_tag(:wc_type, "Extra HD") %><br/>
-  </div>
-</div>
-<div class="field form-group">
-  <%= f.label :front_riggings, class: 'col-sm-2 control-label' %>
-  <div class="col-sm-10">
-    <%= radio_button_tag("wheelchair[front_riggings]", "0") %>
-    <%= label_tag(:front_riggings_std, "Standard Footrests") %><br/>
-    <%= radio_button_tag("wheelchair[front_riggings]", "1") %>
-    <%= label_tag(:front_riggings_ele, "Elevating Legrests") %><br/>
-    <%= radio_button_tag("wheelchair[front_riggings]", "2") %>
-    <%= label_tag(:front_riggings_hd, "Heavy Duty Legrests") %><br/>
-    <%= radio_button_tag("wheelchair[front_riggings]", "3") %>
-    <%= label_tag(:front_riggings_art, "Articulting Legrests") %><br/>
-  </div>
-</div>
-<div class="field form-group">
-  <%= f.label :arms, class: 'col-sm-2 control-label' %>
-  <div class="col-sm-10">
-    <%= radio_button_tag("wheelchair[arms]", "0") %>
-    <%= label_tag(:arms_k1, "Desk") %><br/>
-    <%= radio_button_tag("wheelchair[arms]", "1") %>
-    <%= label_tag(:arms_k3, "Full") %><br/>
-  </div>
-</div>
-
-<div class="actions form-group">
-  <div class="col-sm-offset-2 col-sm-10">
+  <div class="actions form-group">
+    <div class="col-sm-offset-2 col-sm-10">
     <%= f.submit %>
+    </div>
   </div>
-</div>
-
 <% end %>

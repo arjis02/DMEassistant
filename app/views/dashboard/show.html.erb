@@ -2,20 +2,20 @@
 
 <h3>Your facilities:</h3>
 <table class="table table-hover">
-	<tr>
-		<th>Company Name</th>
-		<th>Street Address</th>
-		<th>City</th>
-		<th>State</th>
-		<th>Zipcode</th>
-	</tr>
-	<% @professional.facilities.each do |facility| %>
-		<tr>
-			<td><%= link_to facility.name, facility_path(facility) %></td>
-			<td><%= facility.street_address %></td>
-			<td><%= facility.city %></td>
-			<td><%= facility.state %></td>
-			<td><%= facility.zipcode %></td>
-		</tr>
-	<% end %>
+  <tr>
+    <th>Company Name</th>
+    <th>Street Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zipcode</th>
+  </tr>
+  <% @professional.facilities.each do |facility| %>
+  <tr>
+    <td><%= link_to facility.name, facility_path(facility) %></td>
+    <td><%= facility.street_address %></td>
+    <td><%= facility.city %></td>
+    <td><%= facility.state %></td>
+    <td><%= facility.zipcode %></td>
+  </tr>
+  <% end %>
 </table>

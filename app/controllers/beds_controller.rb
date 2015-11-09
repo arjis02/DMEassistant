@@ -1,3 +1,2 @@
 class BedsController < ApplicationController
-	
 end

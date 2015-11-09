@@ -1,7 +1,7 @@
 class Provider < ActiveRecord::Base
-	has_secure_password
+  has_secure_password
 
-	has_many :orders
+  has_many :orders
 
-	validates :email, uniqueness: true
+  validates :email, uniqueness: true
 end

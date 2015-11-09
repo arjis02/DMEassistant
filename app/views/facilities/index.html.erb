@@ -1,30 +1,28 @@
 <table class="table table-hover">
-	<tr>
-		<th>Company Name</th>
-		<th>Street Address</th>
-		<th>City</th>
-		<th>State</th>
-		<th>Zipcode</th>
-	</tr>
-	<% @facilities.each do |facility| %>
-		<tr>
-			<td><%= link_to facility.name, facility_path(facility) %></td>
-			<td><%= facility.street_address %></td>
-			<td><%= facility.city %></td>
-			<td><%= facility.state %></td>
-			<td><%= facility.zipcode %></td>
-			<% if facility.employs?(current_user) %>
-				<td></td>
-			<% else %>
-				<td>
-					<%= form_for :employments, url: employments_path, method: 'post' do |f| %>
-						<%= f.hidden_field :facility_id, :value => facility.id %>
-						<%= f.submit "Add" %>
-					<% end %>
-				</td>
-			<% end %>
-		</tr>
-	<% end %>
+  <tr>
+    <th>Company Name</th>
+    <th>Street Address</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zipcode</th>
+  </tr>
+  <% @facilities.each do |facility| %>
+    <tr>
+      <td><%= link_to facility.name, facility_path(facility) %></td>
+      <td><%= facility.street_address %></td>
+      <td><%= facility.city %></td>
+      <td><%= facility.state %></td>
+      <td><%= facility.zipcode %></td>
+      <% if facility.employs?(current_user) %>
+        <td></td>
+      <% else %>
+        <td>
+        <%= form_for :employments, url: employments_path, method: 'post' do |f| %>
+        <%= f.hidden_field :facility_id, :value => facility.id %>
+        <%= f.submit "Add" %>
+      <% end %>
+      </td>
+      <% end %>
+    </tr>
+  <% end %>
 </table>
-
-
